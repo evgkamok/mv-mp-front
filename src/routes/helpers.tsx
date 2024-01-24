@@ -1,37 +1,34 @@
-
 //
 // App path
 //
 
-type pathTypes = Record<string, string>;
+type pathTypes = Record<string, string>
 
 export const pathPublic: pathTypes = {
-    home: "/",
-    productDetails: "/product/:idOrSlug,",
-    test: "/test"
+	home: '/',
+	productDetails: '/products/:idOrSlug,',
+	test: '/test',
 }
 
 export const pathPrivate: pathTypes = {
-    accountSettings: "/account-settings"
+	accountSettings: '/account-settings',
 }
 
 export const paths: pathTypes = Object.assign({}, pathPublic, pathPrivate)
 
-export const checkPathMatch = (pathName: string, paths: { [key: string]: string }) => {
-    let isMatch = false;
+export const checkPathMatch = (
+	pathName: string,
+	paths: { [key: string]: string }
+) => {
+	let isMatch = false
 
-    const allPath = Object.keys(paths).map(e => paths[e])
-    const pathFirstSection = pathName.split('/')[1];
-    console.log(pathName);
+	const allPath = Object.keys(paths).map(e => paths[e])
+	const pathFirstSection = pathName.split('/')[1]
 
-    console.log(pathFirstSection);
-
-
-    allPath.forEach(e => {
-        if (e.slice(1) === pathFirstSection) {
-            isMatch = true;
-        }
-    })
-
-    return isMatch
+	allPath.forEach(e => {
+		if (e.slice(1) === pathFirstSection) {
+			isMatch = true
+		}
+	})
+	return isMatch
 }

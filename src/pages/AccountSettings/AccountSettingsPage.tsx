@@ -1,10 +1,9 @@
-
-const AccountSetingsPage: React.FC = () => {
-    return <>
-        <div>
-            Account Settings
-        </div>
-    </>
+const AccountSettingsPage: React.FC = () => {
+	return (
+		<>
+			<div>Account Settings</div>
+		</>
+	)
 }
 
-export default AccountSetingsPage;
+export default AccountSettingsPage
