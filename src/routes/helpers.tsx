@@ -6,7 +6,7 @@ type pathTypes = Record<string, string>
 
 export const pathPublic: pathTypes = {
 	home: '/',
-	productDetails: '/products/:idOrSlug,',
+	productDetails: '/product/:idOrSlug,',
 	test: '/test',
 }
 

@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
 	position: relative;
 	padding: 10px;
 
-	img {
-		cursor: pointer;
+	svg {
+		pointer-events: none;
 	}
 `
 
@@ -59,6 +59,7 @@ export const DiscountPrice = styled.div`
 
 export const Title = styled.h3`
 	margin-bottom: 5px;
+	color: ${colors.primary};
 `
 
 export const Desc = styled.div`
