@@ -65,3 +65,12 @@ export const Title = styled.h3`
 export const Desc = styled.div`
 	margin-bottom: 10px;
 `
+
+export const ButtonsWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	* + * {
+		margin-top: 10px;
+	}
+`

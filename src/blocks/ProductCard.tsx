@@ -2,6 +2,7 @@ import { ReactComponent as HeartEmpty } from 'img/heart-empty.svg'
 import Button from 'components/Button'
 import { Link } from 'react-router-dom'
 import {
+	ButtonsWrapper,
 	Desc,
 	DiscountPrice,
 	Image,
@@ -50,7 +51,9 @@ const ProductCard: React.FC<I_ProductDetails> = ({
 				<Link to={`/product/${id || slug}`}>{title}</Link>
 			</Title>
 			<Desc>{desc}</Desc>
-			<Button>Buy</Button>
+			<ButtonsWrapper>
+				<Button>В корзину</Button>
+			</ButtonsWrapper>
 		</Wrapper>
 	)
 }
