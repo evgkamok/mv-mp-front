@@ -15,10 +15,11 @@ const Button = styled(
 		disabled = false,
 		children,
 		type = 'primary',
+		onClick = () => {},
 		...props
 	}: I_ButtonProps) => {
 		return (
-			<button type='button' {...props}>
+			<button type='button' {...props} onClick={!disabled ? onClick : () => {}}>
 				{children}
 			</button>
 		)

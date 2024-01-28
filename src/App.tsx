@@ -11,7 +11,7 @@ const App = () => {
 			<Header />
 			<Suspense fallback={'Loading, please wait...'}>
 				<PublicRoutes />
-				<PrivateRoutes />
+				{/* <PrivateRoutes /> */}
 			</Suspense>
 			<Footer>Footer Market Place 2024</Footer>
 		</>
