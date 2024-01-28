@@ -8,6 +8,7 @@ export const pathPublic: pathTypes = {
 	home: '/',
 	productDetails: '/product/:idOrSlug',
 	test: '/test',
+	login: '/login',
 }
 
 export const pathPrivate: pathTypes = {

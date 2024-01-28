@@ -70,19 +70,5 @@ export const SearchWrapper = styled.div`
 `
 
 export const RightSide = styled.div`
-	/* background-color: red; */
 	display: flex;
-
-	div > svg {
-		position: relative;
-		/* width: 20px;
-		height: 20px; */
-		margin-left: 20px;
-		cursor: pointer;
-	}
 `
-
-// &:after {
-// 	content: ${({ count }) => (count ? `"` + count`"` : '')};
-
-// }

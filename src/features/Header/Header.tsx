@@ -8,11 +8,12 @@ import {
 	Wrapper,
 } from './styled'
 import Button from 'components/Button'
+import IconLinkNotice from 'components/IconLinkNotice'
 import LogoImg from './img/logo.png'
-import { Bell, Heart, Package, SearchIcon, ShoppingCart } from 'lucide-react'
+import { SearchIcon } from 'lucide-react'
 import { selectIsLogged } from 'features/App/selectors'
 import { useSelector } from 'react-redux'
-import IconNotice from 'components/IconNotice'
+import { paths } from 'routes/helpers'
 
 const Header: React.FC = () => {
 	const isLogged = useSelector(selectIsLogged)
@@ -41,17 +42,13 @@ const Header: React.FC = () => {
 			<RightSide>
 				{isLogged ? (
 					<>
-						{/* <Package />
-						<Heart />
-						<Bell />
-						<ShoppingCart /> */}
-						<IconNotice type='package' />
-						<IconNotice type='hearth' />
-						<IconNotice type='bell' />
-						<IconNotice type='cart' />
+						<IconLinkNotice type='package' count={5} />
+						<IconLinkNotice type='hearth' count={5} />
+						<IconLinkNotice type='bell' count={5} />
+						<IconLinkNotice type='cart' count={5} />
 					</>
 				) : (
-					<div>NO Logged</div>
+					<Link to={paths.login}>&nbsp;&nbsp;&nbsp;Войти</Link>
 				)}
 			</RightSide>
 		</Wrapper>
