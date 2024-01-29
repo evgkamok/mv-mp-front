@@ -57,9 +57,13 @@ export const SearchWrapper = styled.div`
 	align-items: center;
 	border: 2px solid ${colors.primary};
 	border-radius: 4px;
+	padding: 10px 20px;
 
 	> input {
 		width: 100%;
+		border: none;
+		outline: none;
+		font-size: 16px;
 	}
 
 	> svg {
@@ -71,4 +75,5 @@ export const SearchWrapper = styled.div`
 
 export const RightSide = styled.div`
 	display: flex;
+	align-items: center;
 `

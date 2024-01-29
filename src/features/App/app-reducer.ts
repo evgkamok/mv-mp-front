@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { Dispatch } from '@reduxjs/toolkit'
+import type { Dispatch, PayloadAction } from '@reduxjs/toolkit'
 import type { T_AppThunk, T_Reducer } from 'store/types'
 
 import type { I_AppState } from './types'
 
 const initialState: I_AppState = {
-	isLogged: false,
+	isLogged: true,
 	isAppLoading: false,
 }
 
 export const isLoggedReducer: T_Reducer<I_AppState, boolean> = (
 	state,
-	action
+	action: PayloadAction<boolean>
 ) => {
 	state.isLogged = action.payload
 }
 
 export const isAppLoadingReducer: T_Reducer<I_AppState, boolean> = (
 	state,
-	action
+	action: PayloadAction<boolean>
 ) => {
 	state.isAppLoading = action.payload
 }
@@ -32,19 +32,18 @@ const appSlice = createSlice({
 	},
 })
 
-const { isLogged: setLoggedAction, isAppLoading: setAppLoadingAction } =
-	appSlice.actions
+const { isLogged, isAppLoading } = appSlice.actions
 
 export const setIsLogged =
-	(isLogged: boolean): T_AppThunk =>
+	(payload: boolean): T_AppThunk =>
 	(dispatch: Dispatch) => {
-		dispatch(setLoggedAction(isLogged))
+		dispatch(isLogged(payload))
 	}
 
 export const setIsAppLoading =
-	(isAppLoading: boolean): T_AppThunk =>
+	(payload: boolean): T_AppThunk =>
 	(dispatch: Dispatch) => {
-		dispatch(setAppLoadingAction(isAppLoading))
+		dispatch(isAppLoading(payload))
 	}
 
 export default appSlice.reducer

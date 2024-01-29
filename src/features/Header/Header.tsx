@@ -11,9 +11,10 @@ import Button from 'components/Button'
 import IconLinkNotice from 'components/IconLinkNotice'
 import LogoImg from './img/logo.png'
 import { SearchIcon } from 'lucide-react'
-import { selectIsLogged } from 'features/App/selectors'
+import { selectIsLogged } from 'features/App/app-selectors'
 import { useSelector } from 'react-redux'
 import { paths } from 'routes/helpers'
+import { DropDownMenu } from 'components/DropDownMenu/DropDownMenu'
 
 const Header: React.FC = () => {
 	const isLogged = useSelector(selectIsLogged)
@@ -35,7 +36,7 @@ const Header: React.FC = () => {
 			</LeftSide>
 
 			<SearchWrapper>
-				<input type='Please' />
+				<input type='Please' placeholder='Поиск товаров' />
 				<SearchIcon color='#000' size={24} />
 			</SearchWrapper>
 
@@ -46,6 +47,7 @@ const Header: React.FC = () => {
 						<IconLinkNotice type='hearth' count={5} />
 						<IconLinkNotice type='bell' count={5} />
 						<IconLinkNotice type='cart' count={5} />
+						<DropDownMenu />
 					</>
 				) : (
 					<Link to={paths.login}>&nbsp;&nbsp;&nbsp;Войти</Link>

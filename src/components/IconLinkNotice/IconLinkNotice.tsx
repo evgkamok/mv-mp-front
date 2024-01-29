@@ -42,6 +42,10 @@ const IconLinkNotice = styled(
 	margin-right: 20px;
 	position: relative;
 
+	&:first-child {
+		margin-left: 20px;
+	}
+
 	&:after {
 		content: ${({ count }) => (count ? '"' + count + '"' : '')};
 		background-color: ${colors.danger};
